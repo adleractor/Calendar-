@@ -76,7 +76,7 @@ function gate(){
   if(localStorage.getItem(PASS_KEY)==='1') return true;
   const p = prompt('Enter passcode:');
   if(!p){ alert('Access requires a passcode.'); return false; }
-  if(p === 'letmein'){ localStorage.setItem(PASS_KEY,'1'); return true; }
+  if(p === 'AdlertheInnovator'){ localStorage.setItem(PASS_KEY,'1'); return true; }
   alert('Incorrect passcode.');
   return false;
 }
