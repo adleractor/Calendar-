@@ -128,12 +128,138 @@ document.addEventListener('DOMContentLoaded', ()=>{ if(!gate()) document.body.in
 <script>
 // Replace DATA with your real list
 const DATA = [
-  {date:'2025-09-14', start:'18:00', end:'22:00', title:'P1 Naked Mole Rat — First Rehearsal', room:'Reskin 301', category:'Rehearsal', cohorts:['BFA1'], instructor:'', notes:'Mainstage rehearsal window.'},
-  {date:'2025-09-14', start:'18:00', end:'22:00', title:'SP1 Julius Caesar — First Rehearsal', room:'Watts 321', category:'Rehearsal', cohorts:['BFA2','BFA3'], instructor:'', notes:'Studio Production 1.'},
-  {date:'2025-09-22', start:'10:40', end:'12:10', title:'PRF 551 MFA Improvisation I (410)', room:'410', category:'Class', cohorts:['MFA1'], instructor:'Adler, Rob'},
-  {date:'2025-09-22', start:'12:30', end:'14:20', title:'PRF 111 Acting I (405)', room:'405', category:'Class', cohorts:['BFA1'], instructor:'Adler, Rob'},
-  {date:'2025-09-23', start:'09:00', end:'10:30', title:'PRF 221 Movement II (411)', room:'411', category:'Class', cohorts:['BFA2'], instructor:'Fluty, Kristina'}
-];
+      // Academic milestones and deadlines
+      { id: 'fall_start', title: 'Fall Quarter Begins', start: '2025-09-15', allDay: true, description: 'Start of Fall Quarter', category: 'Academic', cohorts: ['All'] },
+      { id: 'winter_start', title: 'Winter Quarter Begins', start: '2026-01-03', allDay: true, description: 'Start of Winter Quarter', category: 'Academic', cohorts: ['All'] },
+      { id: 'spring_start', title: 'Spring Quarter Begins', start: '2026-03-28', allDay: true, description: 'Start of Spring Quarter', category: 'Academic', cohorts: ['All'] },
+      { id: 'fall_finals', title: 'Fall Final Exams', start: '2025-11-17', end: '2025-11-21', allDay: true, description: 'Fall quarter final exams week', category: 'Academic', cohorts: ['All'] },
+      { id: 'winter_finals', title: 'Winter Final Exams', start: '2026-03-14', end: '2026-03-20', allDay: true, description: 'Winter quarter final exams', category: 'Academic', cohorts: ['All'] },
+      { id: 'spring_finals', title: 'Spring Final Exams', start: '2026-06-06', end: '2026-06-12', allDay: true, description: 'Spring quarter final exams', category: 'Academic', cohorts: ['All'] },
+      { id: 'immersion_week', title: 'Immersion Week', start: '2025-09-02', end: '2025-09-08', allDay: true, description: 'Immersion Week / Discover Chicago Program', category: 'Academic', cohorts: ['All'] },
+      { id: 'new_student_convocation', title: 'New Student Convocation', start: '2025-09-09', description: 'New student convocation', category: 'Academic', cohorts: ['All'] },
+      { id: 'fall_classes_begin', title: 'Begin AQ2025 Classes', start: '2025-09-10', description: 'AQ2025 classes begin', category: 'Academic', cohorts: ['All'] },
+      { id: 'winter_classes_begin', title: 'Begin WQ2026 Classes', start: '2026-01-03', description: 'Winter 2026 classes begin', category: 'Academic', cohorts: ['All'] },
+      { id: 'spring_classes_begin', title: 'Begin SQ2026 Classes', start: '2026-03-28', description: 'Spring 2026 classes begin', category: 'Academic', cohorts: ['All'] },
+
+      // Holidays (National, Jewish, Christian, Muslim)
+      { id: 'labor_day_2025', title: 'Labor Day', start: '2025-09-01', allDay: true, description: 'University closed', category: 'Holiday', cohorts: ['All'] },
+      { id: 'rosh_hashanah_2025', title: 'Rosh Hashanah', start: '2025-09-22', end: '2025-09-24', allDay: true, description: 'Rosh Hashanah (Jewish New Year)', category: 'Holiday', cohorts: ['All'] },
+      { id: 'yom_kippur_2025', title: 'Yom Kippur', start: '2025-10-01', end: '2025-10-02', allDay: true, description: 'Yom Kippur', category: 'Holiday', cohorts: ['All'] },
+      { id: 'sukkot', title: 'Sukkot', start: '2025-10-06', end: '2025-10-13', allDay: true, description: 'Sukkot', category: 'Holiday', cohorts: ['All'] },
+      { id: 'simchat_torah', title: 'Simchat Torah', start: '2025-10-20', allDay: true, description: 'Simchat Torah', category: 'Holiday', cohorts: ['All'] },
+      { id: 'columbus_day', title: 'Columbus/Indigenous Peoples Day', start: '2025-10-13', allDay: true, description: 'Columbus Day / Indigenous Peoples Day', category: 'Holiday', cohorts: ['All'] },
+      { id: 'thanksgiving', title: 'Thanksgiving Break', start: '2025-11-27', end: '2025-11-30', allDay: true, description: 'Thanksgiving holiday (university closed)', category: 'Holiday', cohorts: ['All'] },
+      { id: 'hanukkah_2025', title: 'Hanukkah', start: '2025-12-21', end: '2025-12-29', allDay: true, description: 'Hanukkah', category: 'Holiday', cohorts: ['All'] },
+      { id: 'christmas_eve', title: 'Christmas Eve', start: '2025-12-24', allDay: true, description: 'University closed', category: 'Holiday', cohorts: ['All'] },
+      { id: 'christmas_day', title: 'Christmas Day', start: '2025-12-25', allDay: true, description: 'University closed', category: 'Holiday', cohorts: ['All'] },
+      { id: 'new_years_eve', title: "New Year's Eve", start: '2025-12-31', allDay: true, description: 'University closed', category: 'Holiday', cohorts: ['All'] },
+      { id: 'new_years_day', title: "New Year's Day", start: '2026-01-01', allDay: true, description: 'University closed', category: 'Holiday', cohorts: ['All'] },
+      { id: 'mlk_day', title: 'Martin Luther King Jr. Day', start: '2026-01-19', allDay: true, description: 'University closed', category: 'Holiday', cohorts: ['All'] },
+      { id: 'presidents_day', title: "Presidents' Day", start: '2026-02-17', allDay: true, description: "Presidents' Day", category: 'Holiday', cohorts: ['All'] },
+      { id: 'good_friday', title: 'Good Friday', start: '2026-04-03', allDay: true, description: 'University closed', category: 'Holiday', cohorts: ['All'] },
+      { id: 'easter', title: 'Easter Sunday', start: '2026-04-05', allDay: true, description: 'Easter Sunday', category: 'Holiday', cohorts: ['All'] },
+      { id: 'passover', title: 'Passover', start: '2026-04-02', end: '2026-04-09', allDay: true, description: 'Passover', category: 'Holiday', cohorts: ['All'] },
+      { id: 'eid_al_fitr', title: 'Eid al-Fitr', start: '2026-04-19', allDay: true, description: 'Eid al-Fitr (approximate)', category: 'Holiday', cohorts: ['All'] },
+      { id: 'eid_al_adha', title: 'Eid al-Adha', start: '2026-06-26', allDay: true, description: 'Eid al-Adha (approximate)', category: 'Holiday', cohorts: ['All'] },
+      { id: 'memorial_day', title: 'Memorial Day', start: '2026-05-25', allDay: true, description: 'University closed', category: 'Holiday', cohorts: ['All'] },
+      { id: 'juneteenth', title: 'Juneteenth', start: '2026-06-19', allDay: true, description: 'University closed', category: 'Holiday', cohorts: ['All'] },
+      { id: 'independence_day', title: 'Independence Day', start: '2026-07-04', allDay: true, description: 'Independence Day', category: 'Holiday', cohorts: ['All'] },
+
+      // Additional administrative and academic events added based on user-provided schedule
+      { id: 'academic_convocation', title: 'Annual Academic Convocation', start: '2025-09-03', allDay: true, description: 'Annual academic convocation', category: 'Academic', cohorts: ['All'] },
+      { id: 'tuition_due_autumn', title: 'Tuition Due: Autumn Quarter', start: '2025-09-05', allDay: true, description: 'Tuition due for Autumn Quarter', category: 'Administrative', cohorts: ['All'] },
+      { id: 'add_classes_deadline_aq2025', title: 'Add/Drop Deadline AQ2025', start: '2025-09-16', allDay: true, description: 'Deadline to add classes to AQ2025 schedule (11:59 PM)', category: 'Academic', cohorts: ['All'] },
+      { id: 'pass_fail_deadline_aq2025', title: 'Pass/Fail Selection Deadline AQ2025', start: '2025-09-23', allDay: true, description: 'Last day to select pass/fail option for AQ2025 classes', category: 'Academic', cohorts: ['All'] },
+      { id: 'drop_deadline_aq2025', title: 'Drop Deadline AQ2025', start: '2025-09-23', allDay: true, description: 'Last day to drop AQ2025 classes with no penalty', category: 'Academic', cohorts: ['All'] },
+      { id: 'w_grade_assignment_aq2025', title: "W Grades Assigned AQ2025", start: '2025-09-24', allDay: true, description: "Grades of 'W' assigned for AQ2025 classes dropped on or after this day", category: 'Academic', cohorts: ['All'] },
+      { id: 'auditor_deadline_aq2025', title: 'Auditor Status Deadline AQ2025', start: '2025-09-30', allDay: true, description: 'Last day to select auditor status for AQ2025 classes', category: 'Academic', cohorts: ['All'] },
+
+      // Headshot/resume submission events
+      { id: 'headshots_resume_submission', title: 'Headshot & Resume Submission Deadline', start: '2025-10-21', allDay: true, description: 'Deadline for BFA4 and MFA2 actors to submit headshot, resume and bio', category: 'Administrative', cohorts: ['BFA4','MFA2'] },
+      { id: 'hard_copy_headshots', title: 'Hard Copy Headshots & Resumes Due', start: '2026-01-15', allDay: true, description: 'BFA4 and MFA2 actors deliver 75 hard copies of headshots and resumes', category: 'Administrative', cohorts: ['BFA4','MFA2'] },
+
+      // Centennial celebrations and gala
+      { id: 'centennial_celebration_1', title: 'Centennial Celebration', start: '2025-11-13', allDay: true, description: 'Centennial celebration event', category: 'Other', cohorts: ['All'] },
+      { id: 'centennial_celebration_2', title: 'Centennial Celebration', start: '2025-11-14', allDay: true, description: 'Centennial celebration event', category: 'Other', cohorts: ['All'] },
+      { id: 'centennial_gala', title: 'Centennial Gala', start: '2025-11-15', allDay: true, description: 'Centennial Gala at the Old Post Office', category: 'Other', cohorts: ['All'] },
+
+      // Meetings and administrative events
+      { id: 'perf_faculty_meeting', title: 'Performance Faculty Meeting', start: '2025-09-09T09:00:00', end: '2025-09-09T11:00:00', description: 'Faculty meeting for performance program', category: 'Meeting', cohorts: ['All'] },
+      { id: 'faculty_staff_retreat', title: 'Faculty & Staff Retreat', start: '2025-09-19', allDay: true, description: 'Retreat for faculty and staff', category: 'Meeting', cohorts: ['All'] },
+      { id: 'full_department_meeting', title: 'Full Department Meeting', start: '2025-11-11T17:00:00', end: '2025-11-11T18:00:00', description: 'Meeting for all faculty and students', category: 'Meeting', cohorts: ['All'] },
+      { id: 'dts_safety_meeting', title: 'D/T Safety Meeting', start: '2025-09-18', allDay: true, description: 'Design/Technology safety meeting', category: 'Meeting', cohorts: ['All'] },
+      // Removed duplicate Faculty & Staff Retreat events to avoid redundancy
+
+      // Culminations and showcases
+      { id: 'fall_culmination', title: 'Fall Culmination', start: '2025-11-19T12:30:00', end: '2025-11-19T15:30:00', description: 'Fall culmination event', category: 'Culmination', cohorts: ['All'] },
+      { id: 'winter_culmination', title: 'Winter Culmination', start: '2026-03-13T13:00:00', end: '2026-03-13T16:00:00', description: 'Winter culmination event', category: 'Culmination', cohorts: ['All'] },
+      { id: 'all_school_showcase', title: 'All-School Showcase Showing', start: '2026-03-13T17:15:00', end: '2026-03-13T18:15:00', description: 'Viewing of showcase for all school', category: 'Culmination', cohorts: ['All'] },
+      { id: 'chicago_showcase', title: 'Chicago Showcase', start: '2026-03-16T18:00:00', end: '2026-03-16T20:00:00', description: 'Chicago showcase', category: 'Culmination', cohorts: ['All'] },
+      { id: 'la_showcase', title: 'Los Angeles Showcase', start: '2026-03-23', allDay: true, description: 'Los Angeles showcase', category: 'Culmination', cohorts: ['All'] },
+      { id: 'ny_industry', title: 'New York Industry Gathering', start: '2026-03-23', end: '2026-03-29', allDay: true, description: 'Industry gathering in New York (week of March 23)', category: 'Culmination', cohorts: ['All'] },
+      { id: 'spring_culmination', title: 'Spring Culmination', start: '2026-06-05T13:00:00', end: '2026-06-05T17:00:00', description: 'Spring culmination event', category: 'Culmination', cohorts: ['All'] },
+
+      // Admissions and audition events
+      { id: 'debut_depaul', title: 'Debut DePaul / Admissions Day', start: '2025-11-08', allDay: true, description: 'Debut DePaul (Chicago)', category: 'Admission', cohorts: ['All'] },
+      { id: 'moonifieds_dallas_1', title: 'Moonifieds – Dallas Pre-Screens & Callbacks', start: '2025-11-22', allDay: true, description: 'BFA acting pre-screens & callbacks in Dallas, TX', category: 'Admission', cohorts: ['All'] },
+      { id: 'moonifieds_dallas_2', title: 'Moonifieds – Dallas Pre-Screens & Callbacks', start: '2025-11-23', allDay: true, description: 'BFA acting pre-screens & callbacks in Dallas, TX', category: 'Admission', cohorts: ['All'] },
+      { id: 'admissions_chicago_jan17', title: 'Admissions: Chicago Auditions & Interviews', start: '2026-01-17', allDay: true, description: 'Chicago auditions and interviews for BFA & Theatre Studies', category: 'Admission', cohorts: ['All'] },
+      { id: 'admissions_newyork_jan24', title: 'Admissions: New York Auditions', start: '2026-01-24', allDay: true, description: 'BFA & MFA auditions in New York', category: 'Admission', cohorts: ['All'] },
+      { id: 'admissions_newyork_jan25', title: 'Admissions: New York BFA Auditions', start: '2026-01-25', allDay: true, description: 'BFA auditions in New York', category: 'Admission', cohorts: ['All'] },
+      { id: 'admissions_chicago_jan31', title: 'Admissions: Chicago Interviews', start: '2026-01-31', allDay: true, description: 'Interviews in Chicago', category: 'Admission', cohorts: ['All'] },
+      { id: 'admissions_chicago_feb2', title: 'Admissions: Chicago Auditions', start: '2026-02-02', allDay: true, description: 'BFA auditions in Chicago', category: 'Admission', cohorts: ['All'] },
+      { id: 'admissions_losangeles_feb7', title: 'Admissions: Los Angeles Auditions', start: '2026-02-07', allDay: true, description: 'BFA auditions in Los Angeles', category: 'Admission', cohorts: ['All'] },
+      { id: 'admissions_virtual_feb13', title: 'Admissions: Virtual Auditions', start: '2026-02-13', allDay: true, description: 'Virtual auditions via Zoom', category: 'Admission', cohorts: ['All'] },
+      { id: 'admissions_chicago_feb20', title: 'Admissions: Chicago & Virtual Auditions', start: '2026-02-20', allDay: true, description: 'Chicago and virtual auditions for BFA & MFA', category: 'Admission', cohorts: ['All'] },
+      { id: 'admissions_chicago_feb21', title: 'Admissions: Chicago Interviews & Make-Up Auditions', start: '2026-02-21', allDay: true, description: 'Chicago interviews and make-up auditions', category: 'Admission', cohorts: ['All'] },
+      { id: 'admitted_student_day', title: 'Admitted Student Day', start: '2026-04-25', allDay: true, description: 'Admitted student day (Chicago)', category: 'Admission', cohorts: ['All'] },
+
+      // Production events (Mainstage)
+      { id: 'p1_first_rehearsal', title: 'P1 – First Rehearsal', start: '2025-09-14', allDay: true, description: 'First rehearsal for P1: Naked Mole Rat Gets Dressed', category: 'Production', cohorts: ['All'] },
+      { id: 'p1_performances', title: 'P1 – Performs', start: '2025-09-26', end: '2025-09-27', allDay: true, description: 'Performances for P1: Naked Mole Rat Gets Dressed', category: 'Production', cohorts: ['All'] },
+      { id: 'p1_open', title: 'P1 – Open', start: '2025-09-26', allDay: true, description: 'Opening performance for P1', category: 'Production', cohorts: ['All'] },
+
+      { id: 'sp1_first_rehearsal', title: 'SP1 – First Rehearsal', start: '2025-09-14', allDay: true, description: 'First rehearsal for SP1: Julius Caesar', category: 'Production', cohorts: ['All'] },
+      { id: 'sp1_tech', title: 'SP1 – Tech', start: '2025-09-18', allDay: true, description: 'Tech for SP1: Julius Caesar', category: 'Production', cohorts: ['All'] },
+      { id: 'sp1_open', title: 'SP1 – Open', start: '2025-09-26', allDay: true, description: 'Opening performance for SP1: Julius Caesar', category: 'Production', cohorts: ['All'] },
+
+      { id: 'hd1_first_rehearsal', title: 'HD1 – First Rehearsal', start: '2025-09-21', allDay: true, description: 'First rehearsal for HD1: The Lieutenant’s Dream', category: 'Production', cohorts: ['All'] },
+      { id: 'hd1_open', title: 'HD1 – Open', start: '2025-10-08', allDay: true, description: 'Opening performance for HD1', category: 'Production', cohorts: ['All'] },
+
+      { id: 'sp2_first_rehearsal', title: 'SP2 – First Rehearsal', start: '2025-09-21', allDay: true, description: 'First rehearsal for SP2: Cry Havoc', category: 'Production', cohorts: ['All'] },
+      { id: 'sp2_open', title: 'SP2 – Open', start: '2026-02-07', allDay: true, description: 'Opening performance for SP2: Cry Havoc', category: 'Production', cohorts: ['All'] },
+
+      { id: 'sp3_first_rehearsal', title: 'SP3 – First Rehearsal', start: '2025-09-28', allDay: true, description: 'First rehearsal for SP3: Mermaid', category: 'Production', cohorts: ['All'] },
+      { id: 'sp3_open', title: 'SP3 – Open', start: '2025-10-04', allDay: true, description: 'Opening performance for SP3: Mermaid', category: 'Production', cohorts: ['All'] },
+
+      { id: 'esp1_open', title: 'ESP1 – Open', start: '2025-10-10', allDay: true, description: 'Open performance for ESP1: Feminine Octagon', category: 'Production', cohorts: ['All'] },
+
+      { id: 'sp4_first_rehearsal', title: 'SP4 – First Rehearsal', start: '2026-01-11', allDay: true, description: 'First rehearsal for SP4: Love and Information', category: 'Production', cohorts: ['All'] },
+      { id: 'sp4_open', title: 'SP4 – Open', start: '2026-01-24', allDay: true, description: 'Opening performance for SP4', category: 'Production', cohorts: ['All'] },
+      { id: 'sp4_performs', title: 'SP4 – Performs', start: '2026-02-10', end: '2026-02-15', allDay: true, description: 'Performances for SP4', category: 'Production', cohorts: ['All'] },
+
+      { id: 'wt2_first_rehearsal', title: 'WT2 – First Rehearsal', start: '2026-01-04', allDay: true, description: 'First rehearsal for WT2: Gangsters!', category: 'Production', cohorts: ['All'] },
+      { id: 'wt2_open', title: 'WT2 – Open', start: '2026-01-28', allDay: true, description: 'Opening performance for WT2: Gangsters!', category: 'Production', cohorts: ['All'] },
+      { id: 'wt2_performs', title: 'WT2 – Performs', start: '2026-02-11', end: '2026-02-22', allDay: true, description: 'Performances for WT2: Gangsters!', category: 'Production', cohorts: ['All'] },
+
+      // Intro events
+      { id: 'fall_intro_rehearsal', title: 'Fall Intro – First Rehearsal', start: '2025-09-15', allDay: true, description: 'Fall Intro rehearsals begin', category: 'Intro', cohorts: ['All'] },
+      { id: 'fall_intro_preview_1', title: 'Fall Intro 1 – Preview', start: '2025-10-19T14:00:00', end: '2025-10-19T15:30:00', description: 'Fall Intro 1 preview', category: 'Intro', cohorts: ['All'] },
+      { id: 'fall_intro_preview_2', title: 'Fall Intro 2 – Preview', start: '2025-10-19T15:45:00', end: '2025-10-19T17:15:00', description: 'Fall Intro 2 preview', category: 'Intro', cohorts: ['All'] },
+      { id: 'fall_intro_preview_3', title: 'Fall Intro 3 – Preview', start: '2025-10-19T17:30:00', end: '2025-10-19T19:00:00', description: 'Fall Intro 3 preview', category: 'Intro', cohorts: ['All'] },
+      { id: 'fall_intro_performances', title: 'Fall Intros – Performances', start: '2025-10-20', end: '2025-10-24', allDay: true, description: 'Fall Intros performances', category: 'Intro', cohorts: ['All'] },
+      { id: 'winter_intro_tech', title: 'Winter Intro – Tech', start: '2026-01-17', end: '2026-01-18', allDay: true, description: 'Tech for Winter Intros', category: 'Intro', cohorts: ['All'] },
+      { id: 'winter_intro_preview', title: 'Winter Intro – Preview', start: '2026-02-15', allDay: true, description: 'Preview for Winter Intros', category: 'Intro', cohorts: ['All'] },
+      { id: 'winter_intro_performances', title: 'Winter Intros – Performances', start: '2026-02-16', end: '2026-02-20', allDay: true, description: 'Winter Intros performances', category: 'Intro', cohorts: ['All'] },
+      { id: 'spring_intro_rehearsal', title: 'Spring Intro – First Rehearsal', start: '2026-04-06', allDay: true, description: 'Spring Intro rehearsals begin', category: 'Intro', cohorts: ['All'] },
+      { id: 'spring_intro_tech', title: 'Spring Intro – Tech', start: '2026-04-08', end: '2026-04-09', allDay: true, description: 'Tech for Spring Intros', category: 'Intro', cohorts: ['All'] },
+      { id: 'spring_intro_preview', title: 'Spring Intro – Preview', start: '2026-04-15', allDay: true, description: 'Preview for Spring Intros', category: 'Intro', cohorts: ['All'] },
+      { id: 'spring_intro_performances', title: 'Spring Intros – Performances', start: '2026-04-16', end: '2026-04-20', allDay: true, description: 'Spring Intros performances', category: 'Intro', cohorts: ['All'] },
+
+      // Administrative deadlines
+      { id: 'headshot_deadline', title: 'Headshot/Resume/Bio Due', start: '2025-10-21', allDay: true, description: 'BFA 4 & MFA 2 actors submit headshot, resume & bio', category: 'Administrative', cohorts: ['BFA4','MFA2'] },
+      { id: 'headshot_copies_deadline', title: 'Deliver 75 Headshot Copies', start: '2026-01-15', allDay: true, description: 'BFA 4 & MFA 2 deliver 75 hard copies of headshots and resumes', category: 'Administrative', cohorts: ['BFA4','MFA2'] }
+    ];
 
 const $ = sel => document.querySelector(sel);
 const list = $('#list');
