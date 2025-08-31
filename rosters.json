@@ -1,8 +1,17 @@
 {
-  "BFA1": [],
-  "BFA2": [],
-  "BFA3": [],
-  "BFA4": [],
-  "MFA1": [],
-  "MFA2": []
+  "faculty": [
+    "Adler, Rob",
+    "Anthony, Chris",
+    "Bullard, Dexter",
+    "Engelhardt, Marika",
+    "Fluty, Kristina",
+    "Gardner, Charles",
+    "Grant, Sammi",
+    "Griffin, Phyllis",
+    "Kitley, Ryan",
+    "Lopez-Rios, Michelle",
+    "Mills, Jeff",
+    "Pullin, Nicolas (Nick Sandys)"
+  ],
+  "cohorts": ["BFA1","BFA2","BFA3","BFA4","MFA1","MFA2"]
 }
