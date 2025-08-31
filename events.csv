@@ -1,4 +1,51 @@
 date,start,end,title,location,category,cohorts,instructors,notes
+date,start,end,title,location,category,cohorts,instructors,notes
+2025-09-15,10:40,12:10,PRF 551 — Improvisation I,410,Class,MFA1 MFA2,"Adler, Rob","Mon"
+2025-09-15,12:30,14:20,PRF 111 — Acting I,405,Class,BFA1,"Adler, Rob","Mon"
+2025-09-15,14:50,16:40,PRF 111 — Acting I,405,Class,BFA1,"Adler, Rob","Mon"
+2025-09-17,10:40,12:10,PRF 551 — Improvisation I,410,Class,MFA1 MFA2,"Adler, Rob","Wed"
+2025-09-17,12:30,14:20,PRF 111 — Acting I,405,Class,BFA1,"Adler, Rob","Wed"
+2025-09-17,14:50,16:40,PRF 111 — Acting I,405,Class,BFA1,"Adler, Rob","Wed"
+
+2025-09-16,09:00,10:30,PRF 221 — Movement II,411,Class,BFA2,"Fluty, Kristina","Tue"
+2025-09-16,10:40,12:10,PRF 221 — Movement II,411,Class,BFA2,"Fluty, Kristina","Tue"
+2025-09-18,09:00,10:30,PRF 221 — Movement II,411,Class,BFA2,"Fluty, Kristina","Thu"
+2025-09-18,10:40,12:10,PRF 221 — Movement II,411,Class,BFA2,"Fluty, Kristina","Thu"
+
+2025-09-15,10:40,12:10,PRF 630 — Graduate Speech II,303,Class,MFA2,"Griffin, Phyllis","Mon"
+2025-09-17,10:40,12:10,PRF 630 — Graduate Speech II,303,Class,MFA2,"Griffin, Phyllis","Wed"
+
+2025-09-16,10:40,12:30,PRF 231 — Voice & Speech II,303,Class,BFA3,"Grant, Sammi","Tue"
+2025-09-16,12:30,14:00,PRF 231 — Voice & Speech II,303,Class,BFA3,"Grant, Sammi","Tue"
+2025-09-18,10:40,12:30,PRF 231 — Voice & Speech II,303,Class,BFA3,"Grant, Sammi","Thu"
+2025-09-18,12:30,14:00,PRF 231 — Voice & Speech II,303,Class,BFA3,"Grant, Sammi","Thu"
+
+2025-09-15,09:30,10:30,PRF 121 — Movement I,411,Class,BFA1,"Mills, Jeff","Mon"
+2025-09-15,13:30,15:00,PRF 331 — Voice & Speech III,411,Class,BFA3,"Mills, Jeff","Mon"
+2025-09-15,15:10,16:40,PRF 331 — Voice & Speech III,411,Class,BFA3,"Mills, Jeff","Mon"
+2025-09-17,09:30,10:30,PRF 121 — Movement I,411,Class,BFA1,"Mills, Jeff","Wed"
+2025-09-17,13:30,15:00,PRF 331 — Voice & Speech III,411,Class,BFA3,"Mills, Jeff","Wed"
+2025-09-17,15:10,16:40,PRF 331 — Voice & Speech III,411,Class,BFA3,"Mills, Jeff","Wed"
+2025-09-19,10:30,11:30,PRF 121 — Movement I,411,Class,BFA1,"Mills, Jeff","Fri"
+
+2025-09-17,09:30,12:30,PRF 319 — Technique,305,Class,MFA1,"Bullard, Dexter","Wed"
+2025-09-17,13:00,14:50,PRF 611 — Graduate Acting II,302,Class,MFA2,"Bullard, Dexter","Wed"
+2025-09-19,10:10,13:00,PRF 319 — Technique,405,Class,MFA1,"Bullard, Dexter","Fri"
+2025-09-19,13:00,14:50,PRF 611 — Graduate Acting II,302,Class,MFA2,"Bullard, Dexter","Fri"
+
+2025-09-16,11:20,12:50,PRF 531 — Graduate Voice & Speech I,407,Class,MFA1,"Lopez-Rios, Michelle","Tue"
+2025-09-17,10:40,11:40,PRF 131 — Voice & Speech I,407,Class,BFA1,"Lopez-Rios, Michelle","Wed"
+2025-09-18,11:20,12:50,PRF 531 — Graduate Voice & Speech I,407,Class,MFA1,"Lopez-Rios, Michelle","Thu"
+2025-09-19,11:40,12:40,PRF 131 — Voice & Speech I,407,Class,BFA1,"Lopez-Rios, Michelle","Fri"
+
+2025-09-16,13:00,14:30,PRF 390 — Managing an Acting Career,324,Class,BFA4,"Engelhardt, Marika","Tue"
+2025-09-16,14:40,16:10,PRF 390 — Managing an Acting Career,324,Class,BFA4,"Engelhardt, Marika","Tue"
+2025-09-18,13:00,14:30,PRF 390 — Managing an Acting Career,324,Class,BFA4,"Engelhardt, Marika","Thu"
+2025-09-18,14:40,16:10,PRF 390 — Managing an Acting Career,324,Class,BFA4,"Engelhardt, Marika","Thu"
+
+2025-09-19,11:30,13:50,PRF 415 — Business of Acting,324,Class,BFA4,"Gardner, Charles","Fri"
+2025-09-19,13:50,15:50,PRF 415 — Business of Acting,324,Class,BFA4,"Gardner, Charles","Fri"
+
 2025-08-19,,,SUN MON TUE WED THU FRI SAT,,TTS,,,
 2025-09-10,,,P1 First Rehearsal — Naked Mole Rat Gets Dressed: The Underground Rock Experience,,Room 301,,Reza Mirsajadi,
 2025-09-14,,,SP1 First Rehearsal — Julius Caesar,,Room 302,,Nicole Ricciardi,
